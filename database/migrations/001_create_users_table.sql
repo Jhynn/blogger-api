@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS blogger;
+USE blogger;
+
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users(
+    id BIGINT auto_increment PRIMARY KEY,
+    name VARCHAR(64) NOT NULL,
+    nickname VARCHAR(64) NOT NULL UNIQUE,
+    email VARCHAR(64) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL,
+    created_at TIMESTAMP DEFAULT current_timestamp()
+) ENGINE=INNODB;
+
+SET FOREIGN_KEY_CHECKS=1;

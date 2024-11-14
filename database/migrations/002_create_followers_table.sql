@@ -1,0 +1,17 @@
+CREATE DATABASE IF NOT EXISTS blogger;
+USE blogger;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+DROP TABLE IF EXISTS followers;
+CREATE TABLE followers (
+    user_id BIGINT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+
+    follower_id BIGINT NOT NULL,
+    FOREIGN KEY (follower_id) REFERENCES users(id) ON DELETE CASCADE,
+
+    PRIMARY KEY (user_id, follower_id)
+) ENGINE=INNODB;
+
+SET FOREIGN_KEY_CHECKS=1;

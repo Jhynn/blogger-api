@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS blogger;
+USE blogger;
+
+SET FOREIGN_KEY_CHECKS=0;
+
+DROP TABLE IF EXISTS posts;
+CREATE TABLE posts (
+    id BIGINT auto_increment PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    title VARCHAR(128) NOT NULL,
+    content TEXT(512) NOT NULL,
+    likes BIGINT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT current_timestamp(),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=INNODB;
+SET FOREIGN_KEY_CHECKS=1;
