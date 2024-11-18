@@ -46,10 +46,9 @@ DB_USER=your_username
 DB_PASS=your_password
 DB_NAME=blogger
 
-API_PORT=8000
+API_PORT=8080
 
 SECRET_KEY=your_secret_key
-
 ```
 
   - Replace the placeholders with your actual database credentials and a strong secret key for JWT.
@@ -74,7 +73,8 @@ This project was implemented in order to learn the Go language and develop APIs 
 It was largely based on the project developed in the course 
 "[Aprenda Golang do Zero! Desenvolva uma APLICAÇÃO COMPLETA!](https://www.udemy.com/course/aprenda-golang-do-zero-desenvolva-uma-aplicacao-completa/)"
  by [Otávio Augusto Gallego](https://github.com/OtavioGallego) (he teach very well, I recommend him). 
- However, I feel the need to apply some improvements, I also used Go's native mux: [ServeMux](https://pkg.go.dev/net/http#ServeMux).
+ However, I feel the need to apply some improvements, which I'll implement soon. 
+ I also used Go's native mux: [ServeMux](https://pkg.go.dev/net/http#ServeMux).
 
  The application is pretty simple, you can learn a lot of things though. For instance: authentication and security for it, middlewares, repository pattern,
  generic implementation of responses for the API.
